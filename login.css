@@ -1,0 +1,258 @@
+/* Estilo do corpo e centralização do conteúdo */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    flex-direction: column;
+    background-color: #e0f7fa;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Efeito de fade-in para o corpo */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilo para o nome do site */
+#site-name {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 20px;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    animation: slideIn 1s forwards, fadeInText 1.5s ease-in-out forwards;
+}
+
+/* Animação de slide-in para o nome do site */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-80px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Animação de fade-in do texto */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Fundo de vídeo estilizado */
+.video-fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-fundo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(55%) saturate(120%);
+}
+
+/* Container estilizado */
+.container {
+    width: 90%;
+    max-width: 350px;
+    padding: 20px;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.85));
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+    text-align: center;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+/* Animação de fade-in para o container */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Título para os formulários */
+h2 {
+    margin-bottom: 20px;
+    color: #444;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* Estilos de label e input */
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #777;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-size: 1em;
+    opacity: 0;
+    animation: fadeInInput 1.6s ease-in-out forwards;
+}
+
+/* Efeito de fade-in para os inputs */
+@keyframes fadeInInput {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efeito ao focar nos campos de input */
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #42a5f5;
+    box-shadow: 0 0 8px rgba(66, 165, 245, 0.4);
+    outline: none;
+}
+
+/* Botão estilizado */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #4a90e2, #42a5f5);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    opacity: 0;
+    animation: fadeInButton 2s ease-in-out forwards;
+}
+
+/* Efeito de fade-in para o botão */
+@keyframes fadeInButton {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botão hover e active */
+button:hover {
+    background: linear-gradient(135deg, #3a6fd8, #3a90f5);
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+/* Alternar login e cadastro */
+p {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+p a {
+    color: #42a5f5;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #3a90f5;
+}
+
+/* Media queries para dispositivos móveis */
+@media (max-width: 768px) {
+    #site-name {
+        font-size: 36px; /* Reduz o tamanho da fonte */
+        margin-top: 10px;
+    }
+
+    h2 {
+        font-size: 1.5em; /* Reduz o tamanho do título */
+    }
+
+    .container {
+        width: 95%;
+        padding: 15px; /* Ajusta o espaçamento */
+        border-radius: 12px;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    button {
+        padding: 10px; /* Ajusta o padding dos inputs e botão */
+        font-size: 0.9em;
+    }
+
+    
+}
+
+@media (max-width: 480px) {
+    #site-name {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    button {
+        padding: 8px;
+        font-size: 0.85em;
+    }
+
+    p {
+        font-size: 0.85em;
+    }
+}

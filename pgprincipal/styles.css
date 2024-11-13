@@ -1,0 +1,347 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f7fa;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2%;
+}
+
+/* Estilização do Header com gradiente */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: linear-gradient(135deg, #2980b9, #6dd5fa);
+    color: #ffffff;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-size: 2em;
+    font-style: italic;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Botões chamativos */
+a {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+a:active {
+    transform: scale(0.98);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Vídeo de fundo com animação de zoom */
+.video-fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-fundo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+    animation: zoomBackground 20s infinite alternate ease-in-out;
+}
+
+@keyframes zoomBackground {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Barra de pesquisa */
+.search-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 15px;
+}
+
+.search-container input[type="text"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-container input[type="text"]:focus {
+    border-color: #f8e3e3;
+}
+
+/* Filtro de gênero */
+.filter-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.filter-container label {
+    color: #ffffff;
+    margin-right: 2px;
+    margin-left: 25px;
+}
+
+.filter-container select {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.filter-container select:focus {
+    border-color: #ffffff;
+}
+
+/* Container dos livros */
+.book-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Estilo dos livros individuais */
+.book {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.book:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.book img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+.book h2 {
+    font-size: 1.2em;
+    margin: 15px 10px 5px;
+    color: #34495e;
+    font-weight: 600;
+}
+
+.book p {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+/* Botão de Favoritos no header */
+.favorites-container #show-favorites {
+    background-color: #0084ff;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 150px;
+}
+
+.favorites-container #show-favorites:hover {
+    background-color: #0044ff;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão "Adicionar aos Favoritos" de cada livro */
+.book .favorite-button {
+    background-color: #00c3ff;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book .favorite-button:hover {
+    background-color: #1100ff;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 0 10px rgba(17, 0, 255, 0.6);
+    animation: pulse 1s ease-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Botão de favorito após ser adicionado */
+.book .favorite-button.added {
+    background-color: #32cd32;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book .favorite-button.added:hover {
+    background-color: #2e8b57;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.book .favorite-button:active {
+    transform: scale(0.95);
+}
+.filtroN{
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .search-container,
+    .filter-container {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .book-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book {
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .book {
+        width: 90%;
+    }
+
+    .favorites-container #show-favorites {
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .search-container input[type="text"]{
+        padding: 8px;
+        font-size: 14px;
+        margin-right: 24px;
+    }
+    .filter-container select {
+        padding: 8px;
+        font-size: 14px;
+        margin-left: 15px;
+    }
+    .filtroN{
+        padding: 10px;
+        font-size: 14px;
+        margin-left: 25px;
+    }
+
+    a {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
